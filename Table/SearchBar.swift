@@ -28,7 +28,6 @@ struct SearchBar: View {
     }
     
     func symbolSearch() -> Void{
-        print("Alamofire")
         let request = AF.request("https://www.alphavantage.co/query?function=SYMBOL_SEARCH&keywords=\(text)&apikey=4GIXFE9SBIV8IYYZ")
         request.responseData{ response in
             let json =  try! JSON(data:response.data!)

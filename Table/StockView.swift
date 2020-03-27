@@ -15,7 +15,7 @@ struct StockView: View {
         NavigationView {
             VStack{
                 List {
-                    ForEach(myStock.currentHoldings){ stock in
+                    ForEach(myStock.currentHoldings, id:\.self){ stock in
                         StockViewRow(stock: stock)
                     }
                 }

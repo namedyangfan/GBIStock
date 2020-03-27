@@ -2,8 +2,7 @@
 import SwiftUI
 /// User
 /// Implement Identifiable which will help to uniquely identify each user.
-struct Stock: Identifiable, Hashable, Decodable{    
-    var id: String = UUID().uuidString
+struct Stock: Hashable, Decodable{    
     
     let name: String
     

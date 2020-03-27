@@ -33,18 +33,3 @@ struct AddStockMemberView_Previews: PreviewProvider {
         .environmentObject(membersGBI)
     }
 }
-
-//HStack{
-//    Text(stock.name)
-//        .onTapGesture {
-//            self.membersGBI.members[0].addStock(stock: stock)
-//            print(self.membersGBI.members[0])
-//        }
-//    Spacer()
-//    if (self.membersGBI.isFavourite(stock: stock)){
-//        Image(systemName: "star.fill")
-//            .foregroundColor(.yellow)
-//    } else {
-//        Image(systemName: "star")
-//    }
-//}

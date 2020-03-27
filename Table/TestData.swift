@@ -3,7 +3,7 @@ struct TestData {
     
     /// stocks
     static let manulife = Stock(name: "Manulife", symbol: "MFC", price: 20.12)
-    static let tesla = Stock(name: "Tesla", symbol: "TSLA", price: 788.12)
+    static let tesla = Stock(name: "Tesla Inc.", symbol: "TSLA", price: 1.0)
     static let weed = Stock(name: "Weed", symbol: "Weed", price: 788.12)
     static let stock1 = Stock(name: "Stock1", symbol: "Stock1", price: 788.12)
     static let stock2 = Stock(name: "Stock2", symbol: "Stock2", price: 788.12)

@@ -23,7 +23,7 @@ struct MemberSection: View {
                         }
                 )  {
                     if(self.showStock){
-                        ForEach(member.stocks){ stock in
+                        ForEach(member.stocks, id: \.self){ stock in
                             StockViewRow(stock: stock)
                         }
                     }
