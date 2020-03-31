@@ -19,7 +19,7 @@ struct AddStockMemberView: View {
             SearchBar(text: $searchString, searchStocks: $searchStocks)
             List{
                 ForEach(self.searchStocks, id: \.self){ stock in
-                    AddStockMemberRow(isOn: self.membersGBI.isFavourite(stock: stock), stock: stock, addStock: { self.membersGBI.members[0].addStock(stock: stock)})
+                    AddStockMemberRow(isOn: self.membersGBI.isFavourite(stock: stock), stock: stock)
                 }
             }
         }

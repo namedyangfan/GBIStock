@@ -23,3 +23,9 @@ struct Member: Hashable {
         self.stocks.append(stock)
     }
 }
+
+struct holding: Hashable {
+    var stock: Stock
+    var numShare: Float
+    var purchasePrice: Float
+}

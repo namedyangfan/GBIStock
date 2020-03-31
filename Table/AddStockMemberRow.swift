@@ -9,9 +9,11 @@
 import SwiftUI
 
 struct AddStockMemberRow: View {
+    @EnvironmentObject var membersGBI: MembersGBI
+    @State private var modalToggle: Bool = false
+    
     var isOn: Bool
     var stock: Stock
-    var addStock: () -> ()
     
     var body: some View {
         HStack{
@@ -22,16 +24,24 @@ struct AddStockMemberRow: View {
                     .foregroundColor(.yellow)
             } else {
                 Image(systemName: "star")
+                .onTapGesture {
+                    self.modalToggle.toggle()
+                }
+
             }
 
-        }                .onTapGesture {
-            self.addStock()
+        }
+        .sheet(isPresented: $modalToggle) {
+            AddStockModal(modalToggle: self.$modalToggle, stock:self.stock)
+            .environmentObject(self.membersGBI)
         }
     }
 }
 
 struct AddStockMemberRow_Previews: PreviewProvider {
+    static var membersGBI = TestData.membersGBI()
     static var previews: some View {
-        AddStockMemberRow(isOn:true, stock:TestData.stock1, addStock: {})
+        AddStockMemberRow(isOn:false, stock:TestData.stock1)
+        .environmentObject(membersGBI)
     }
 }

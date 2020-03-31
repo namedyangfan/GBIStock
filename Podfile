@@ -8,5 +8,4 @@ target 'Table' do
   # Pods for Table
   pod 'Alamofire', '~> 5.0'
   pod 'SwiftyJSON', '~> 4.0'
-
 end
