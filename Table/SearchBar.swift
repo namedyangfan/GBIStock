@@ -31,8 +31,9 @@ struct SearchBar: View {
         let request = AF.request("https://www.alphavantage.co/query?function=SYMBOL_SEARCH&keywords=\(text)&apikey=4GIXFE9SBIV8IYYZ")
         request.responseData{ response in
             let json =  try! JSON(data:response.data!)
+            print(json)
             self.searchStocks = json["bestMatches"].map{ match in
-                Stock(name: match.1["2. name"].stringValue, symbol: match.1["1. symbol"].stringValue, price: 1.0)
+                Stock(name: match.1["2. name"].stringValue, symbol: match.1["1. symbol"].stringValue, price: 20)
             }
         }
     }

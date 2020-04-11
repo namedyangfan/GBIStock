@@ -24,7 +24,7 @@ struct MemberView: View {
                 NavigationLink(destination: AddStockMemberView()){
                     Text("Add")
                         .font(.system(size: 22))
-                        .padding(.all, 10)
+                        .padding(.all, 8)
                         .foregroundColor(.white)
                         .background(Color.green)
                         .cornerRadius(8)

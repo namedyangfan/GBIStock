@@ -7,7 +7,6 @@
 //
 
 import SwiftUI
-import LBTATools
 
 struct AddStockModal: View {
     @EnvironmentObject var membersGBI: MembersGBI
@@ -44,7 +43,7 @@ struct AddStockModal: View {
                 VStack(spacing:20){
                     Button(action: {
                         self.modalToggle.toggle()
-                        self.membersGBI.members[self.selection].addStock(stock:self.stock)
+                        self.membersGBI.members[self.selection].addHolding(holding: Holding(stock: self.stock, numShare: (self.numShares as NSString).floatValue, purchasePrice: (self.shareUnitPrice as NSString).floatValue))
                     }) {
                         HStack {
                             Spacer()

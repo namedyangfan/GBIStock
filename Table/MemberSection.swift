@@ -17,14 +17,16 @@ struct MemberSection: View {
                         Text(member.initials)
                         .padding()
                         .background(Color.red)
+                        .foregroundColor(Color.white)
+                        .font(.system(size:20, weight: .bold))
                         .cornerRadius(25)
                         .onTapGesture() {
                             self.showStock.toggle()
                         }
                 )  {
                     if(self.showStock){
-                        ForEach(member.stocks, id: \.self){ stock in
-                            StockViewRow(stock: stock)
+                        ForEach(member.portfolio, id: \.self){ holding in
+                            StockViewRow(holding: holding)
                         }
                     }
                }

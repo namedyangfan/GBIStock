@@ -9,23 +9,21 @@
 struct Member: Hashable {
     let firstName: String
     let lastName: String
-    var stocks: [Stock]
+    var portfolio: [Holding]
     let initials: Substring
     
-    init(firstName:String, lastName:String, stocks:[Stock]) {
+    init(firstName:String, lastName:String, portfolio:[Holding]) {
         self.firstName = firstName
         self.lastName = lastName
-        self.stocks = stocks
         self.initials = firstName.prefix(1) + lastName.prefix(1)
+        self.portfolio = portfolio
     }
     
-    mutating func addStock(stock: Stock){
-        self.stocks.append(stock)
+    mutating func addHolding(holding: Holding){
+        portfolio.append(holding)
     }
-}
-
-struct holding: Hashable {
-    var stock: Stock
-    var numShare: Float
-    var purchasePrice: Float
+    
+    func isHolding (stock: Stock) -> Bool{
+        return portfolio.contains(where: {$0.stock == stock})
+    }
 }

@@ -4,12 +4,7 @@ class MembersGBI: ObservableObject {
     @Published var members = [Member]()
     
     func isFavourite(stock:Stock) -> Bool {
-        for member in members{
-            if (member.stocks.contains(stock)){
-                return true
-            }
-        }
-        return false
+        return members.contains(where: {$0.isHolding(stock: stock)})
     }
     
     func addMember(member:Member){
